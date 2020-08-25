@@ -5,20 +5,20 @@ class Author
     @name = name
   end
 
-  def add_song(song)
+  def add_post(song)
     song.artist = self
   end
 
   def add_song_by_name(name)
-    song = Song.new(name)
-    add_song(song)
+    post = Post.new(name)
+    add_post(post)
   end
 
-  def songs
-    Song.all.select {|song| song.artist == self}
+  def post
+    Post.all.select {|post| post.author == self}
   end
 
-  def self.song_count
-    Song.all.length
+  def self.post_count
+    Post.all.length
   end
 end
