@@ -8,4 +8,8 @@ class Song
     @title = title
   end
 
+  def save
+    @@all << self
+  end
+
 end
